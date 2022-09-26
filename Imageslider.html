@@ -1,0 +1,50 @@
+<html>
+<head>
+
+<style>
+.container	
+{
+border:2px solid black;
+width:500px;
+margin-left:400px;
+padding:20px;
+
+}
+img{
+	height:500px;
+}
+button{
+margin-top:20px;
+	margin-left:200px;
+}
+</style>
+
+<script>
+let pic=["1.jpg","2.jpg","3.jpg","4.jpg"];
+function randomImg()
+{
+random_index=Math.floor(Math.random()*pic.length);
+//get image at random_index
+selectimg=pic[random_index]	
+
+//display the images
+document.getElementById("show").src=selectimg;
+
+}
+</script>
+</head>
+<body>
+
+<div class="container">
+<img id="show"></img>
+<button onclick="randomImg()">Random Image</button>
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
