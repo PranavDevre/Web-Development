@@ -1,0 +1,72 @@
+<html>
+<head>
+
+<style>
+
+body
+{
+	background-color:black;
+}
+.container	
+{
+border:2px solid black;
+width:300px;
+height:300px;
+margin-left:400px;
+padding:20px;
+background-color:skyblue;
+
+}
+
+button{
+	
+	width:80px;
+	margin:30px;
+	color:Black;
+	padding:5px;
+	background-color:lightgreen;
+	
+}
+h1{
+	text-size:20px;
+	margin-left:100px;
+	margin-top:5px;
+	margin-right:100px;	
+	
+}
+input{
+	width:300px;
+	padding:10px;
+	margin:2px;
+	border-radius:3px;
+}
+</style>
+
+<script>
+
+const handleSignup=()=>{
+let userId=document.getElementById("uname").value;
+let userPass=document.getElementById("upass").value;
+localStorage.setItem(userId,userPass);
+alert("Register Successfully");
+
+}
+</script>
+</head>
+<body>
+
+<div class="container">
+<h1>Login</h1>
+Enter Your Username:<input type="text" id="uname"><br>
+Enter Your Password:<input type="text" id="upass"><br>
+<button onclick="#">Login</button>
+<button onclick="handleSignup()">Signup</button>
+</div>
+</body>
+</html>
+
+
+
+
+
+
