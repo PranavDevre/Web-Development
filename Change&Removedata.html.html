@@ -1,0 +1,89 @@
+<html>
+<head>
+
+<style>
+
+body
+{
+	background-color:black;
+}
+.container	
+{
+border:2px solid black;
+width:300px;
+height:300px;
+margin-left:400px;
+padding:20px;
+background-color:skyblue;
+
+}
+
+button{
+	
+	width:120px;
+	margin-top:20px;
+	margin-left:18px;
+	color:Black;
+	padding:3px;
+	background-color:lightgreen;
+	
+}
+
+input{
+	width:300px;
+	padding:10px;
+	margin:2px;
+	border-radius:3px;
+}
+</style>
+
+<script>
+
+const handlePass=()=>
+{
+let userId=document.getElementById("uname").value;
+let userPass=document.getElementById("upass").value;
+let newPass=document.getElementById("newpass").value;
+let upwd=localStorage.getItem(userId);
+if(userPass==upwd)
+{
+	localStorage.setItem(userId,newPass);
+	alert("Password Change Successfully");			
+}
+else
+{
+	alert("Incorrect User Id and Old Password");
+}
+}
+
+const handleremove=()=>
+{
+let userId=document.getElementById("uname").value;
+let userPass=document.getElementById("upass").value;
+let upwd=localStorage.getItem(userId);
+if(userPass==upwd)
+{
+	localStorage.removeItem(userId,userPass);
+	alert("Data remove Successfully");			
+}
+else
+{
+	alert("Incorrect User Id and Old Password");
+}
+}
+
+</script>
+</head>
+<body>
+
+<div class="container">
+<h2>Change Password</h2>
+<input type="text" id="uname" placeholder="Enter Your User ID"><br>
+<input type="password" placeholder="Enter Your Old password"id="upass"><br>
+<input type="password" id="newpass" placeholder="Enter Your New Password"><br>
+<button onclick="handlePass()">Change Password</button>
+<button onclick="handleremove()">Remove Data</button>
+
+</div>
+</body>
+</html>
